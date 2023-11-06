@@ -1,4 +1,5 @@
 # W - water, F - forest, S- swamp, D - desert, M - mountains, P - pumaterritory, B - bearterritory
+'''
 Map1 = [
     [
         ['W'], ['W'], ['W'], ['W'], ['F'], ['F']
@@ -65,3 +66,85 @@ Map6 = [
         ['M'], ['W'], ['W'], ['W'], ['W'], ['F']
     ]
 ]
+'''
+Maps = [
+    [   # Map1
+        [
+            ['W'], ['W'], ['W'], ['W'], ['F'], ['F']
+        ],
+        [
+            ['S'], ['S'], ['W'], ['D'], ['F'], ['F']
+        ],
+        [
+            ['S'], ['S'], ['D'], ['D', 'B'], ['D', 'B'], ['F']
+        ]
+    ],
+    [   # Map2
+        [
+            ['S', 'P'], ['F', 'P'], ['F', 'P'], ['F'], ['F'], ['F']
+        ],
+        [
+            ['S'], ['S'], ['F'], ['D'], ['D'], ['D']
+        ],
+        [
+            ['S'], ['M'], ['M'], ['M'], ['M'], ['D']
+        ]
+    ],
+    [   # Map3
+        [
+            ['S'], ['S'], ['F'], ['F'], ['F'], ['W']
+        ],
+        [
+            ['S', 'P'], ['S', 'P'], ['F'], ['M'], ['W'], ['W']
+        ],
+        [
+            ['M', 'P'], ['M'], ['M'], ['M'], ['W'], ['W']
+        ]
+    ],
+    [   # Map4
+        [
+            ['D'], ['D'], ['M'], ['M'], ['M'], ['M']
+        ],
+        [
+            ['D'], ['D'], ['M'], ['W'], ['W'], ['W', 'P']
+        ],
+        [
+            ['D'], ['D'], ['D'], ['F'], ['F'], ['F', 'P']
+        ]
+    ],
+    [   # Map5
+        [
+            ['S'], ['S'], ['S'], ['M'], ['M'], ['M']
+        ],
+        [
+            ['S'], ['D'], ['D'], ['W'], ['M'], ['M', 'B']
+        ],
+        [
+            ['D'], ['D'], ['W'], ['W'], ['W', 'B'], ['W', 'B']
+        ]
+    ],
+    [   # Map6
+        [
+            ['D', 'B'], ['D'], ['S'], ['S'], ['S'], ['F']
+        ],
+        [
+            ['M', 'B'], ['M'], ['S'], ['S'], ['F'], ['F']
+        ],
+        [
+            ['M'], ['W'], ['W'], ['W'], ['W'], ['F']
+        ]
+    ]
+]
+# MapIndexes =  [[i1, t1], [i2, t2], [i3, t3], [i4, t4], [i5, t5], [i6, t6] ]
+
+
+def map_builder(map_indexes):
+    global_map = []
+    for i in range(6):
+        current_map_part = Maps[map_indexes[i][0]-1]
+        if map_indexes[i][1]:
+            current_map_part = current_map_part[::-1]
+            for k in range(3):
+                current_map_part[k] = current_map_part[k][::-1]
+        print(current_map_part)
+    return ()
