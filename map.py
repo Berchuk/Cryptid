@@ -146,5 +146,5 @@ def map_builder(map_indexes):
             current_map_part = current_map_part[::-1]
             for k in range(3):
                 current_map_part[k] = current_map_part[k][::-1]
-        print(current_map_part)
+        print(1)
     return ()
